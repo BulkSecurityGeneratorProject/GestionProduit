@@ -1,0 +1,59 @@
+{
+    "name": "Vente",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "quantite",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "prixUnitaire",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "client",
+            "otherEntityRelationshipName": "vente",
+            "relationshipName": "client",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "commande",
+            "otherEntityRelationshipName": "vente",
+            "relationshipName": "commande",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "produit",
+            "otherEntityRelationshipName": "vente",
+            "relationshipName": "produit",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190502123728",
+    "javadoc": "Vente entity",
+    "entityTableName": "vente",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

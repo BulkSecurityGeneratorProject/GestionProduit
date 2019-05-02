@@ -1,0 +1,28 @@
+{
+    "gestionProduitsApp": {
+        "produit": {
+            "home": {
+                "title": "Produits",
+                "createLabel": "Créer un nouveau Produit",
+                "createOrEditLabel": "Créer ou éditer un Produit"
+            },
+            "created": "Un nouveau Produit a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Produit avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Produit avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Produit {{ id }} ?"
+            },
+            "detail": {
+                "title": "Produit"
+            },
+            "code": "Code",
+            "nom": "Nom",
+            "prixAchat": "Prix Achat",
+            "prixVente": "Prix Vente",
+            "quantite": "Quantite",
+            "status": "Status",
+            "commande": "Commande",
+            "vente": "Vente"
+        }
+    }
+}

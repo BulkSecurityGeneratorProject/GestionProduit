@@ -38,6 +38,15 @@ public class CacheConfiguration {
             cm.createCache(dz.elit.gproduit.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(dz.elit.gproduit.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(dz.elit.gproduit.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(dz.elit.gproduit.domain.Produit.class.getName(), jcacheConfiguration);
+            cm.createCache(dz.elit.gproduit.domain.Produit.class.getName() + ".commandes", jcacheConfiguration);
+            cm.createCache(dz.elit.gproduit.domain.Produit.class.getName() + ".ventes", jcacheConfiguration);
+            cm.createCache(dz.elit.gproduit.domain.Client.class.getName(), jcacheConfiguration);
+            cm.createCache(dz.elit.gproduit.domain.Client.class.getName() + ".commandes", jcacheConfiguration);
+            cm.createCache(dz.elit.gproduit.domain.Client.class.getName() + ".ventes", jcacheConfiguration);
+            cm.createCache(dz.elit.gproduit.domain.Commande.class.getName(), jcacheConfiguration);
+            cm.createCache(dz.elit.gproduit.domain.Commande.class.getName() + ".ventes", jcacheConfiguration);
+            cm.createCache(dz.elit.gproduit.domain.Vente.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,35 @@
+{
+    "name": "Client",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "commande",
+            "otherEntityRelationshipName": "client",
+            "relationshipName": "commande"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "vente",
+            "otherEntityRelationshipName": "client",
+            "relationshipName": "vente"
+        }
+    ],
+    "changelogDate": "20190502123726",
+    "entityTableName": "client",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

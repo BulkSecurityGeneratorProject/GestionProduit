@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-vente-heading" jhiTranslate="gestionProduitsApp.vente.home.createOrEditLabel">Create or edit a Vente</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!vente.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="vente.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionProduitsApp.vente.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                        [(ngModel)]="vente.code" required/>
+                    <div [hidden]="!(editForm.controls.code?.dirty && editForm.controls.code?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.code?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionProduitsApp.vente.quantite" for="field_quantite">Quantite</label>
+                    <input type="number" class="form-control" name="quantite" id="field_quantite"
+                        [(ngModel)]="vente.quantite" required/>
+                    <div [hidden]="!(editForm.controls.quantite?.dirty && editForm.controls.quantite?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.quantite?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.quantite?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionProduitsApp.vente.prixUnitaire" for="field_prixUnitaire">Prix Unitaire</label>
+                    <input type="number" class="form-control" name="prixUnitaire" id="field_prixUnitaire"
+                        [(ngModel)]="vente.prixUnitaire" required/>
+                    <div [hidden]="!(editForm.controls.prixUnitaire?.dirty && editForm.controls.prixUnitaire?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.prixUnitaire?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.prixUnitaire?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionProduitsApp.vente.client" for="field_client">Client</label>
+                    <select class="form-control" id="field_client" name="client" [(ngModel)]="vente.client" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientOption.id === vente.client?.id ? vente.client : clientOption" *ngFor="let clientOption of clients; trackBy: trackClientById">{{clientOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionProduitsApp.vente.commande" for="field_commande">Commande</label>
+                    <select class="form-control" id="field_commande" name="commande" [(ngModel)]="vente.commande" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="commandeOption.id === vente.commande?.id ? vente.commande : commandeOption" *ngFor="let commandeOption of commandes; trackBy: trackCommandeById">{{commandeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionProduitsApp.vente.produit" for="field_produit">Produit</label>
+                    <select class="form-control" id="field_produit" name="produit" [(ngModel)]="vente.produit" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="produitOption.id === vente.produit?.id ? vente.produit : produitOption" *ngFor="let produitOption of produits; trackBy: trackProduitById">{{produitOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

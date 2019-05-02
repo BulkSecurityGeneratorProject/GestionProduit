@@ -1,0 +1,9 @@
+{
+    "gestionProduitsApp": {
+        "ProduitStatus": {
+            "null": "",
+            "DISPONIBLE": "DISPONIBLE",
+            "NON_DISPONIBLE": "NON_DISPONIBLE"
+        }
+    }
+}
