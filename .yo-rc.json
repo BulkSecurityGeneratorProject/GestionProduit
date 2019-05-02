@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "GestionProduits",
+    "packageName": "dz.elit.gproduit",
+    "packageFolder": "dz/elit/gproduit",
+    "serverPort": 8008,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.8.2",
+    "jwtSecretKey": "YzUwOWIxMzNhYmQ2YzlkN2E5ODg0NDNlZDM2YThlNGU0YWUzZTc2ZGFlZmU0MzE4ZThjMDllYTdkZDkyYTZhYTFlMDIxZmQ5NjdjZDY5YzcxYjNkZTk1YWU4Njc4NjZjM2EyZDg3OGVlOWM2NTAwN2U5OTk0Mzk1OWUzNDRiOWI=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "hayadi",
+  "repository-name": "GestionProduit"
+}
